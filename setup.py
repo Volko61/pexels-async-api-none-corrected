@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pexels_async_api",
-    version="0.2.1",
+    version="0.2.2",
     packages=find_packages(),
     install_requires=[
         "aiohttp",
@@ -13,7 +13,7 @@ setup(
     description="An Asynchronous Python Client for the Pexels API",
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/darkcurrent/pexels_async_api",
+    url="https://github.com/darkcurrent/pexels-async-api",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
