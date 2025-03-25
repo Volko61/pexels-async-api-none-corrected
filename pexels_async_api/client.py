@@ -34,7 +34,10 @@ class AsyncPexelsClient:
                           max_tries=8)
     async def _make_request(self, endpoint, params=None):
         headers = {"Authorization": self.api_key}
-        params = {k: v for k, v in params.items() if v is not None}  # remove None values
+        if params is not None:  # Only process params if it's not None
+            params = {k: v for k, v in params.items() if v is not None}  # Remove None values
+        else:
+            params = {}  # Use an empty dict if params is None
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{self.base_url}/{endpoint}", headers=headers, params=params) as response:
                 response.raise_for_status()
